@@ -1,10 +1,9 @@
 module Samurai
-  class DashboardController < ApplicationController
-     
-    before_action :authenticate_user!
+  class DashboardController < RestrictionController
 
     def index 
       render 'index'
     end
+    
   end
 end

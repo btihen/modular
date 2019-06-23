@@ -20,18 +20,32 @@
         <li class="nav-item <%= active_page(samurai.landing_path) %>">
           <%= link_to  "Landing", samurai.landing_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item <%= active_page(samurai.new_user_session_path) %>">
-          <%= link_to  "Login", samurai.new_user_session_path, class: 'nav-link' unless current_user %>          <%= link_to  "Profile", samurai.edit_user_registration_path, class: 'nav-link' if current_user %>
-        </li>
-        <li class="nav-item <%= active_page(samurai.edit_user_registration_path) %>">
-          <%= link_to  "Profile", samurai.edit_user_registration_path, class: 'nav-link' if current_user %>
-        </li>
-        <li class="nav-item <%= active_page(samurai.destroy_user_session_path) %>">
-          <%= link_to  "Logout", samurai.destroy_user_session_path, method: :delete, class: 'nav-link' if current_user %>
-         </li>
-        <li class="nav-item <%= active_page(samurai.new_user_registration_path) %>">
-          <%= link_to  "Signup", samurai.new_user_registration_path, class: 'nav-link' unless current_user %>
-        </li>
+        <% if current_user&.admin? %>
+          <li class="nav-item <%= active_page(samurai.admin_path) %>">
+            <%= link_to  "Admin", samurai.admin_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+
+        <% if current_user %>
+          <li class="nav-item <%= active_page(samurai.edit_user_registration_path) %>">
+            <%= link_to  "Profile", samurai.edit_user_registration_path, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item <%= active_page(samurai.new_user_session_path) %>">
+            <%= link_to  "Login", samurai.new_user_session_path, class: 'nav-link' %>          
+          </li>
+        <% end %>
+
+        <% if current_user %>
+          <li class="nav-item <%= active_page(samurai.destroy_user_session_path) %>">
+            <%= link_to  "Logout", samurai.destroy_user_session_path, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item <%= active_page(samurai.new_user_registration_path) %>">
+            <%= link_to  "Signup", samurai.new_user_registration_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+        
       </ul>
       <form class="form-inline my-2 my-md-0">
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
