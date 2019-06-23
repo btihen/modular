@@ -1,1 +1,5 @@
-//= link_directory ../stylesheets/core .css
+//= link_directory ../stylesheets/samurai .css
+
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
