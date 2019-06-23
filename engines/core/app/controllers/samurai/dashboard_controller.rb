@@ -1,5 +1,6 @@
 module Samurai
-  class DashboardController < ApplicationController
+  class DashboardController < RestrictionController
+
     def index 
       render 'index'
     end

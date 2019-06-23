@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bootstrap', '~> 4.3.1'
   spec.add_dependency 'webpacker', '~> 4.0'
   spec.add_dependency 'jquery-rails'
+  spec.add_dependency 'devise'
 
   spec.add_development_dependency 'pg'
 end
