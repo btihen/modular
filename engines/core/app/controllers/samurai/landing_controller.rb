@@ -1,0 +1,7 @@
+module Samurai
+  class LandingController < ApplicationController
+    def index 
+      render 'index'
+    end
+  end
+end
