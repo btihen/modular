@@ -8,8 +8,40 @@
   <%= stylesheet_link_tag    "samurai/application", media: "all" %>
 </head>
 <body>
+<div class="container">
+  <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <%= link_to  "Samurai", samurai.root_path, class: 'navbar-brand' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<%= yield %>
+    <div class="collapse navbar-collapse" id="navbarsExample09">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to  "Landing", samurai.landing_path, class: 'nav-link' %>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+  </nav>
+  <br>
+  <main role="main">
+    <div class="jumbotron">
+      
+      <%= yield %>
+
+    </div>
+  </main>
+
+  <footer class="page-footer font-small light bg-light rounded">
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="https://github.com"> Dodam.com</a>
+    </div>  
+  </footer>
+
+</container>
 
 </body>
 </html>
