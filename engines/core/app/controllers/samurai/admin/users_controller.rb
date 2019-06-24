@@ -1,9 +1,9 @@
 module Samurai
   module Admin
 
-    class AdminController < ApplicationController
+    class UsersController < RestrictionController
       def index 
-        users = Samurai::User.all
+        users = Samurai::User.ordered
         render 'index', locals: { users: users }
       end
     end

@@ -1,5 +1,5 @@
 module Samurai
-  class DashboardController < RestrictionController
+  class HomeController < RestrictionController
 
     def index 
       render 'index'

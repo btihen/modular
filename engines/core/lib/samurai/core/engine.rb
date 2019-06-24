@@ -3,6 +3,10 @@ module Samurai
     class Engine < ::Rails::Engine
       isolate_namespace Samurai
 
+      # within this engine allows us to write 
+      # 'admin/shared/nav' instead of 'samurai/admin/shared/nav'
+      # paths["app/views"] << "app/views/samurai"
+
       # copy migrations from engine to container app
       initializer :append_migration do |app|
         unless app.root.to_s.match(root.to_s)

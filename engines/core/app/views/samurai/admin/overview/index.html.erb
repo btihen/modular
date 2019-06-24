@@ -1,0 +1,28 @@
+<%= render 'samurai/admin/shared/nav' %>
+
+<div class='col-md-10'>
+  <div class='panel panel-primary'>
+
+    <div class='panel-heading'>
+      <h6>Last <%= limit %> Users</h6>
+    </div>
+
+    <table class="table">
+      <thead>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Admin?</th>
+      </thead>
+      <tbody>
+      <%- users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.email %></td>
+          <td><%= user.admin? %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+  </div>   <!-- panel -->
+</div>     <!-- column -->
