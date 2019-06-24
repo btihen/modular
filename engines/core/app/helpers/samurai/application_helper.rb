@@ -24,14 +24,10 @@ module Samurai
       end
 
       # https://stackoverflow.com/questions/1203892/how-can-i-find-out-the-current-route-in-rails
-      def active_path?(match_controller)
-        current_uri = request.env['PATH_INFO']
-        path = Rails.application.routes.recognize_path(current_uri)
-        controller = path[:controller]
-        # action = path[:action]
-        pp path 
-        pp controller
-        controller.include?(match_controller) ? 'active' : ''
+      def active_path(match_controller)
+        current_uri = request.path_info  # "/admin/users"
+        current_controller = current_uri.split('/').second
+        current_controller.eql?(match_controller) ? 'active' : ''
       end
 
     end

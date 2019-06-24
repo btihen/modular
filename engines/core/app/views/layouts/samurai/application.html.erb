@@ -17,11 +17,11 @@
 
   <div class="collapse navbar-collapse" id="navbarsExample09">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item <%= active_page('/') %>">
+      <li class="nav-item">
         <%= link_to  "Landing", '/', class: 'nav-link' %>
       </li>
       <% if current_user&.admin? %>
-        <li class="nav-item <%= active_page(samurai.admin_path) %>">
+        <li class="nav-item <%= active_path('admin') %>">
           <%= link_to  "Admin", samurai.admin_path, class: 'nav-link' %>
         </li>
       <% end %>
