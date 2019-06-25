@@ -29,7 +29,28 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bootstrap', '~> 4.3.1'
   spec.add_dependency 'webpacker', '~> 4.0'
   spec.add_dependency 'jquery-rails'
+  spec.add_dependency 'faker'
+  spec.add_dependency 'rspec-rails'
+  # modular/engines/core $
+  # rails g rspec:install
+  spec.add_dependency 'factory_bot_rails'
+  # alternative to devise from thoughtbot
+  # modular/engines/core $
+  # spec.add_dependency 'clearance'
+  # modular/engines/core $
+  # rails g clearance:install
   spec.add_dependency 'devise'
+  # modular/engines/core $
+  # rails g devise:install
+  # rails g devise User
+  # rails db:migrate
+  # rails generate devise:views
+  # If you have more than one Devise model in your application (such as User and Admin), you will notice that Devise uses the same views for all models. Fortunately, Devise offers an easy way to customize views. All you need to do is set config.scoped_views = true inside the config/initializers/devise.rb file.
+  # After doing so, you will be able to have views based on the role like users/sessions/new and admins/sessions/new. If no view is found within the scope, Devise will use the default view at devise/sessions/new. 
+  # You can also use the generator to generate scoped views:
+  # rails generate devise:views users
+  spec.add_dependency 'pundit'
+  # rails g pundit:install
 
   spec.add_development_dependency 'pg'
 end

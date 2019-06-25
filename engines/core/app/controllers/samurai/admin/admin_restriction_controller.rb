@@ -1,7 +1,7 @@
 module Samurai
   module Admin
 
-    class AdminRestrictionController < RestrictionController
+    class AdminRestrictionController < ApplicationController # RestrictionController
       before_action :is_admin! 
 
       private 

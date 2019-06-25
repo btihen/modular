@@ -1,6 +1,7 @@
-require 'bootstrap'
 require 'jquery-rails'
+require 'bootstrap'
 require 'devise'
+require 'pundit'
 
 module Samurai
   module Core

@@ -1,7 +1,7 @@
 module Samurai
   module Admin
 
-    class OverviewController < AdminRestrictionController
+    class OverviewController < ApplicationController # AdminRestrictionController
       def index
         limit = 5
         users = Samurai::User.ordered.limit(limit)

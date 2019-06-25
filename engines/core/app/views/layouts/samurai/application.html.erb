@@ -20,29 +20,25 @@
       <li class="nav-item">
         <%= link_to  "Landing", '/', class: 'nav-link' %>
       </li>
-      <% if current_user&.admin? %>
+
+      <% if current_user %>
+        <% if current_user.manager %>
         <li class="nav-item <%= active_path('admin') %>">
           <%= link_to  "Admin", samurai.admin_path, class: 'nav-link' %>
         </li>
-      <% end %>
-
-      <% if current_user %>
-        <li class="nav-item <%= active_page(samurai.edit_user_registration_path) %>">
-          <%= link_to  "Profile", samurai.edit_user_registration_path, class: 'nav-link' %>
-        </li>
-      <% else %>
-        <li class="nav-item <%= active_page(samurai.new_user_session_path) %>">
-          <%= link_to  "Login", samurai.new_user_session_path, class: 'nav-link' %>          
-        </li>
-      <% end %>
-
-      <% if current_user %>
+        <% end %>
         <li class="nav-item <%= active_page(samurai.destroy_user_session_path) %>">
-          <%= link_to  "Logout", samurai.destroy_user_session_path, class: 'nav-link' %>
+          <%= link_to "Logout", samurai.destroy_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item <%= active_page(samurai.edit_user_registration_path) %>">
+          <%= link_to current_user.email, samurai.edit_user_registration_path, class: 'nav-link' %>
         </li>
       <% else %>
         <li class="nav-item <%= active_page(samurai.new_user_registration_path) %>">
-          <%= link_to  "Signup", samurai.new_user_registration_path, class: 'nav-link' %>
+          <%= link_to "Signup", samurai.new_user_registration_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item <%= active_page(samurai.new_user_session_path) %>">
+          <%= link_to "Login", samurai.new_user_session_path, class: 'nav-link' %>          
         </li>
       <% end %>
       

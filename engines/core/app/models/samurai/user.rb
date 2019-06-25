@@ -8,5 +8,16 @@ module Samurai
 
     scope :ordered, -> { order(created_at: :desc) }
 
+    enum role: [:user, :vip, :admin]
+    after_initialize :set_default_role, :if => :new_record?
+  
+    def set_default_role
+      self.role ||= :user
+    end
+
+    # def admin?
+    #   self.role == :user
+    # end
+  
   end
 end
