@@ -16,6 +16,19 @@ module Samurai
         end
       end
 
+      # gems must be installed in top application and this allows the factories to be used
+      initializer 'samurai.factories', after: 'factory_bot.set_factory_paths' do
+        factories_location = File.expand_path('../../../../spec/factories/samurai', __FILE__)
+        FactoryBot.definition_file_paths.unshift(factories_location) if defined?(FactoryBot)
+      end
+
+      # # configure generators within the engine
+      # config.generators do |g|
+      #   g.test_framework :rspec, fixture: false
+      #   g.fixture_replacement :factory_bot #, dir: 'spec/factories/samurai'
+      #   g.factory_bot dir: 'spec/factories/samurai'
+      # end
+
       # config dev server proxy
       initializer "webpacker.proxy" do |app|
         insert_middleware = begin

@@ -4,12 +4,10 @@ PATH
     samurai_core (0.1.0)
       bootstrap (~> 4.3.1)
       devise
-      factory_bot_rails
-      faker
       jquery-rails
+      pg
       pundit
       rails (~> 6.0.0.rc1)
-      rspec-rails
       webpacker (~> 4.0)
 
 GEM
@@ -237,7 +235,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pg
+  factory_bot_rails
+  faker
+  rspec-rails
   samurai_core!
 
 BUNDLED WITH

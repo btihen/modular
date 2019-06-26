@@ -29,12 +29,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  gem 'pry'
-  gem 'pry-byebug'
-  gem 'rspec-rails', '~> 3.8'
-  # rails generate rspec:install
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'faker'
+  gem 'rspec-rails'
+  # rails generate rspec:install
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
 end
 
 group :development do
