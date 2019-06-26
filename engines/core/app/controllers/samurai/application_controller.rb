@@ -1,7 +1,9 @@
 module Samurai
   class ApplicationController < ActionController::Base
-    protect_from_forgery with: :exception
-    
+    # protect_from_forgery prepend: true, with: :exception
+    # protect_from_forgery with: :null_session
+    protect_from_forgery
+
     before_action :authenticate_user!
 
     # include Pundit

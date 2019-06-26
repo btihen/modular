@@ -54,6 +54,7 @@ Gem::Specification.new do |spec|
 
   # TESTING OPTIONS
   spec.add_development_dependency 'faker'
+  spec.add_development_dependency 'pry-rails'
   spec.add_development_dependency 'rspec-rails'
   # modular/engines/core $
   # rails g rspec:install
