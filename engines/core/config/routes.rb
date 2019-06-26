@@ -1,15 +1,16 @@
 Samurai::Core::Engine.routes.draw do
   devise_for :users, class_name: "Samurai::User", module: :devise
-  get '/home', to: 'home#index',  as: 'home'
-  # get '/landing',   to: 'landing#index',    as: 'landing'
+
+  resources :users, except: [:show, :new, :create]
 
   namespace :admin do
-    resources :users, only: :index
+    resources :users #, only: :index
 
     get '/', to: 'overview#index'  # admin_path
     root to: 'overview#index'      # admin_root
   end
   
-  root to: 'home#index'            # samurai_root
+  get '/home', to: 'users#index',  as: 'home'
+  root to: 'users#index'            # samurai_root
 
 end

@@ -1,0 +1,12 @@
+<p hidden id='samurai_home' class='pageName'></p>
+
+<h1>User Home</h1>
+
+<h3>Edit Profile:</h3>
+<ul>
+<% users.sort_by(&:id).each do |user| %>
+  <li><%= link_to "Edit #{user.id}: #{user.email}", edit_user_path(user) %></li>
+<% end %>
+</ul>
+<br>
+Current User: <%= current_user.id %>; <%= current_user.email %>; role: <%= current_user.role %>

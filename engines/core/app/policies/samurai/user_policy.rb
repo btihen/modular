@@ -1,29 +1,39 @@
 module Samurai
   class UserPolicy
-    attr_reader :current_user, :model
-
-    def initialize(current_user, model)
-      @current_user = current_user
-      @user = model
-    end
 
     def index?
-      current_user.admin?
+      true
     end
 
     def show?
-      current_user.admin? || (current_user == user)
+      user.admin? || (user == current_user)
+    end
+
+    def edit?
+      user.admin? || (user == current_user)
     end
 
     def update?
-      current_user.admin? || (current_user == user)
+      edit?
     end
 
     def destroy?
-      # return false if current_user == user
-      #
-      # current_user.admin?
-      current_user.admin? || (current_user == user)
+      # admin can't delete self
+      return false if user.admin? && (user == current_user)
+
+      # admin can delete anyone and user can delete self
+      user.admin? || (user == current_user)
+    end
+
+    class UserIndexScope < Samurai::ApplicationPolicy::Scope
+      def resolve
+        if user.admin?
+          scope.all
+          # Samurai::User.all
+        else 
+          Samurai::User.where(user.id)
+        end
+      end
     end
 
   end
