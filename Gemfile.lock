@@ -1,4 +1,15 @@
 PATH
+  remote: engines/contacts
+  specs:
+    samurai_contacts (0.1.0)
+      bootstrap (~> 4.3.1)
+      jquery-rails
+      pg
+      rails (~> 6.0.0.rc1)
+      samurai_core
+      webpacker (~> 4.0)
+
+PATH
   remote: engines/core
   specs:
     samurai_core (0.1.0)
@@ -306,6 +317,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 6.0.0.rc1)
   rspec-rails
+  samurai_contacts!
   samurai_core!
   sass-rails (~> 5)
   shoulda-matchers

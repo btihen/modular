@@ -1,4 +1,6 @@
-module Samurai::Contacts
-  module ApplicationHelper
-  end
+module Samurai
+  module Contacts
+    module ApplicationHelper
+    end
+  end 
 end

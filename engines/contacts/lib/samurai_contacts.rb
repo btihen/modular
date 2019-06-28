@@ -1,18 +1,21 @@
 require "samurai/contacts"
 require "samurai/contacts/engine"
 
-module Samurai::Contacts
+module Samurai 
+  module Contacts
   
-  # configure webpacker instance
-  ROOT_PATH = Pathname.new(File.join(__dir__, ".."))
+    # configure webpacker instance
+    ROOT_PATH = Pathname.new(File.join(__dir__, ".."))
 
-  class << self
-    def webpacker
-      @webpacker ||= ::Webpacker::Instance.new(
-        root_path: ROOT_PATH,
-        config_path: ROOT_PATH.join("config/webpacker.yml")
-      )
+    class << self
+      def webpacker
+        @webpacker ||= ::Webpacker::Instance.new(
+          root_path: ROOT_PATH,
+          config_path: ROOT_PATH.join("config/webpacker.yml")
+        )
+      end
     end
+    
   end
 
 end

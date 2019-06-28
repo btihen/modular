@@ -3,7 +3,8 @@ require 'bootstrap'
 # require 'devise'
 require 'pundit'
 
-module Samurai::Contacts
+module Samurai
+  module Contacts
 
     # class << self
     #   def webpacker
