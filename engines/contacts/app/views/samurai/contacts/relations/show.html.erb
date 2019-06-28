@@ -1,0 +1,17 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h2><%= relation.first_name %> <%= relation.last_name %></h2>
+
+<div class='row'>
+  <div class='col-md-8'>
+    <strong>Company:</strong> <%= relation.company %>
+    <br>
+    <strong>Email:</strong> <%= relation.email %>
+    <br>
+    <strong>Phone:</strong> <%= relation.phone %>
+    <br>
+  </div>
+</div>
+
+<%= link_to 'Edit', samurai.edit_relation_path(relation), class: 'btn btn-primary' %> |
+<%= link_to 'Back', samurai.relations_path, class: 'btn btn-default' %>

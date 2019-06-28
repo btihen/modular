@@ -1,2 +1,6 @@
-Samurai::Contacts::Engine.routes.draw do
+Samurai::Core::Engine.routes.draw do
+  # extending the core routes with this
+  scope module: 'contacts' do
+    resources :contacts
+  end
 end

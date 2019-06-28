@@ -2,8 +2,8 @@
 class LandingController < ApplicationController
   
   def index 
-    render 'index'
+    @landing = "hi"
+    render :index
   end
 
 end
-# end

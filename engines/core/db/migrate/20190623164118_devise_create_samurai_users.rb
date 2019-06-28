@@ -38,7 +38,7 @@ class DeviseCreateSamuraiUsers < ActiveRecord::Migration[6.0]
 
     add_index :samurai_users, :email,                unique: true
     add_index :samurai_users, :reset_password_token, unique: true
-    add_index :samurai_users, :confirmation_token,   unique: true
+    # add_index :samurai_users, :confirmation_token,   unique: true
     add_index :samurai_users, :unlock_token,         unique: true
   end
 end
